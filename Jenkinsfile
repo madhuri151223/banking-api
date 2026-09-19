@@ -26,8 +26,8 @@ pipeline {
 
         stage('Verify Package') {
             steps {
-            
-                sh 'tar -czf $PACKAGE_NAME'
+                sh 'test -f $PACKAGE_NAME'
+                sh 'tar -tzf $PACKAGE_NAME'
             }
         }
 
